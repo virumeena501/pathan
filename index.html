@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Official Community</title>
+
+<meta name="description"
+content="Join our official community for regular updates, useful resources, and important information.">
+
+<meta name="robots" content="index, follow">
+
+<!-- =========================
+     META PIXEL
+========================= -->
+<script>
+!function(f,b,e,v,n,t,s)
+{
+  if(f.fbq)return;
+
+  n=f.fbq=function(){
+    n.callMethod ?
+    n.callMethod.apply(n,arguments) :
+    n.queue.push(arguments)
+  };
+
+  if(!f._fbq)f._fbq=n;
+
+  n.push=n;
+  n.loaded=true;
+  n.version='2.0';
+  n.queue=[];
+
+  t=b.createElement(e);
+  t.async=true;
+  t.src=v;
+
+  s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)
+}
+(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+/* SAME PIXEL ID EVERYWHERE */
+fbq('init', '1539692461172962');
+
+/* PageView ONLY */
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+<img
+  height="1"
+  width="1"
+  style="display:none"
+  src="https://www.facebook.com/tr?id=28442935198644809&ev=PageView&noscript=1"
+/>
+</noscript>
+
+<!-- =========================
+     STYLE
+========================= -->
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+
+  background:
+    radial-gradient(circle at top, #123746 0%, #061923 45%, #020b11 100%);
+
+  color: white;
+  text-align: center;
+}
+
+.container {
+  padding: 45px 18px;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+
+  margin: auto;
+  padding: 28px 22px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.06);
+
+  border: 1px solid rgba(0,198,255,0.15);
+
+  box-shadow:
+    0 0 30px rgba(0,198,255,0.12);
+
+  backdrop-filter: blur(12px);
+}
+
+h1 {
+  margin: 8px 0 18px;
+
+  font-size: 29px;
+  line-height: 1.2;
+}
+
+.description {
+  color: #bfc8cd;
+
+  font-size: 16px;
+  line-height: 1.6;
+
+  margin-bottom: 25px;
+}
+
+.features {
+  text-align: left;
+
+  margin: 20px 0;
+  padding: 18px;
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.05);
+
+  color: #d8dfe2;
+
+  line-height: 2;
+}
+
+.feature {
+  margin: 2px 0;
+}
+
+.check {
+  color: #00d9ff;
+  font-weight: bold;
+}
+
+.join-btn {
+  width: 100%;
+
+  border: none;
+
+  padding: 16px 20px;
+
+  border-radius: 30px;
+
+  font-size: 17px;
+  font-weight: bold;
+
+  color: #001018;
+
+  background:
+    linear-gradient(90deg, #00c6ff, #0072ff);
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 20px rgba(0,114,255,0.25);
+
+  transition: transform 0.2s;
+}
+
+.join-btn:active {
+  transform: scale(0.97);
+}
+
+.join-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.notice {
+  margin-top: 18px;
+
+  color: #aeb8bd;
+
+  font-size: 13px;
+}
+
+.footer {
+  margin-top: 28px;
+
+  color: #858f94;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="card">
+
+    <h1>
+      VIP NUMBER PREDICTIONS
+    </h1>
+
+    <p class="description">
+      Stay updated with the latest information,
+      helpful resources, and important community
+      updates in one place.
+    </p>
+
+    <div class="features">
+
+      <div class="feature">
+        <span class="check">✔</span>
+        Regular Updates
+      </div>
+
+      <div class="feature">
+        <span class="check">✔</span>
+        Helpful Resources
+      </div>
+
+      <div class="feature">
+        <span class="check">✔</span>
+        Active Community
+      </div>
+
+    </div>
+
+    <!--
+      IMPORTANT:
+      Telegram link is opened by JavaScript
+      only after the user actually clicks.
+    -->
+
+    <button
+      id="joinButton"
+      class="join-btn"
+      type="button">
+
+      Access Community
+
+    </button>
+
+    <div class="notice">
+      Limited Access – For community members
+    </div>
+
+    <div class="footer">
+
+      This page is for informational purposes only.<br>
+
+      We are not affiliated with any official organization.
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     BUTTON TRACKING
+========================= -->
+
+<script>
+
+const joinButton = document.getElementById("joinButton");
+
+let leadSent = false;
+
+joinButton.addEventListener("click", function () {
+
+  /*
+    Prevent multiple clicks from generating
+    multiple Lead events.
+  */
+  if (leadSent) {
+    return;
+  }
+
+  leadSent = true;
+
+  joinButton.disabled = true;
+  joinButton.innerText = "Opening Community...";
+
+
+  /*
+    Send Lead ONLY after the user
+    physically clicks the button.
+  */
+
+  fbq('track', 'Lead', {
+    content_name: 'Community Join',
+    value: 1,
+    currency: 'INR'
+  });
+
+
+  /*
+    Small delay gives the browser time
+    to send the Meta event before Telegram opens.
+  */
+
+  setTimeout(function () {
+
+    window.location.href =
+      "https://t.me/+DikhGbrjx2ZmZjNl";
+
+  }, 700);
+
+});
+
+</script>
+
+</body>
+</html>
